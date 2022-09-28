@@ -2,14 +2,14 @@
     box-sizing: border-box;
   }
   
-  /* Style the body */
+
   body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: black;
+    background-color:white;
   }
   
-  /* Header/logo Title */
+
   .header {
     padding: 15px;
     text-align: center;
@@ -18,18 +18,18 @@
     height: 70px;
   }
   
-  /* Increase the font size of the heading */
+ 
   .header h1 {
     font-size: 40px;
   }
   
-  /* Style the top navigation bar */
+
   .navbar {
     overflow: hidden;
     background-color: #333;
   }
   
-  /* Style the navigation bar links */
+
   .navbar a {
     float: left;
     display: block;
@@ -39,53 +39,91 @@
     text-decoration: none;
   }
   
-  /* Right-aligned link */
+
   .navbar a.right {
     float: right;
   }
   
-  /* Change color on hover */
+
   .navbar a:hover {
     background-color: #ddd;
     color: black;
   }
   
-  /* Column container */
+
   .row {  
-    display: -ms-flexbox; /* IE10 */
+    display: -ms-flexbox; 
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
   
-  /* Create two unequal columns that sits next to each other */
-  /* Sidebar/left column */
+
   .date {
-    -ms-flex: 30%; /* IE10 */
+    -ms-flex: 30%; 
     flex: 30%;
     background-color:black;
     color:white;
-    padding: 20px;
+    padding: 15px;
+  }
+  #date{
+    background-color: white;
+    padding: 15px;
+  }
+  .explanation{
+  
+    -ms-flex: 30%; 
+    flex: 30%;
+    background-color:WHITE;
+    color:BLACK;
+    padding: 15px;
+ 
+
+  }
+  #explanation{
+
+font-size: 1.3rem;
+
+  }
+  .tomorrowsPic{
+    -ms-flex: 15%; 
+    flex: 15%;
+    background-color:grey;
+    color:black;
+    padding: 15px;
+
   }
   
-  /* Main column */
+  #hdurl{
+
+    padding: 15px;
+  }
+  
+
   .main {   
-    -ms-flex: 70%; /* IE10 */
+    -ms-flex: 70%; 
     flex: 70%;
     background-color:black;
     color:white;
     padding: 20px;
   }
-  
-  /* Fake image, just for this example */
-  .fakeimg {
-    background-color:grey;
-  color:white;
-    width: 100%;
-    padding: 20px;
+  .title{
+   width:10%;
+    background-color:white;
+    color:black;
+    padding: 15px;
+
+  }
+  #title{
+    color: black;
+    padding: 15px;
+
   }
   
-  /* Footer */
+  #url{
+   width:700px
+  }
+
   .footer {
     font-family: 'Times New Roman', Times, serif;
     font-size:small;
@@ -96,14 +134,14 @@
     color:white;
   }
   
-  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+ 
   @media screen and (max-width: 700px) {
     .row {   
       flex-direction: column;
     }
   }
   
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  
   @media screen and (max-width: 400px) {
     .navbar a {
       float: none;
