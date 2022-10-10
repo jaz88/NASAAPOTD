@@ -7,3 +7,13 @@ media_type	"image"
 service_version	"v1"
 title	"A Furious Sky over Mount Shasta"
 url	"https://apod.nasa.gov/apod/image/2209/ShastaSky_Rohner_960.jpg"
+
+Archive JSON Eckdaten: 
+	
+date	"2022-05-01"
+explanation	"What does a black hole l…nnounced: Next Thursday"
+hdurl	"https://apod.nasa.gov/ap…/2205/M87bh_EHT_2629.jpg"
+media_type	"image"
+service_version	"v1"
+title	"First Horizon-Scale Image of a Black Hole"
+url	"https://apod.nasa.gov/ap…e/2205/M87bh_EHT_960.jpg"
