@@ -1,8 +1,10 @@
+//funtion um diese in der HTMLdatei index2 aufzurufen
 function contentLoader(){
     sendApiReqIndex();
 
     
 }
+//  asynchroe Funktion um die Opene APi der Nasa APOTD aufzurufen 
 async function sendApiReqIndex(){
    // let apiKey=("WeJQydmgkMuduN5VfyYepdvelVujh0GjH4e7yJro");
     let res= await fetch("https://api.nasa.gov/planetary/apod?api_key=WeJQydmgkMuduN5VfyYepdvelVujh0GjH4e7yJro");
@@ -12,6 +14,7 @@ async function sendApiReqIndex(){
 
     
 }
+// funktion um die gesendete JSON elemente auf der Index2 ( home) seite zu zeigen 
 function useApiDataIndex(data){
     document.querySelector("#date").innerHTML += data.date;
     document.querySelector("#explanation").innerHTML += data.explanation;
@@ -37,8 +40,9 @@ function useApiDataIndex(data){
 
 
 
+// ajax funktionen für die Archivseite , für die Filterfunktionen 
 
-
+// für die Suche nach start und End Datum 
 const date4 = window.document.querySelector("#datepicker-1"),
 fp1 = new flatpickr(date4);
 const date3 = window.document.querySelector("#datepicker-2"),
@@ -49,7 +53,7 @@ $(".archiv-datepicker").flatpickr({
     minDate: "2015-01-01",// hätte funktionieren sollen tuts aber nicht 
     maxDate: "today"});
 
-
+// aufrufen der Api durch get der query parameters 
 $(document).ready(function () {
     $(document).on("click", "#klick", function () {
         const startDate = $("#datepicker-1").val();
@@ -61,7 +65,7 @@ $(document).ready(function () {
                 start_date: startDate,
                 end_date: endDate,
                 api_key: "WeJQydmgkMuduN5VfyYepdvelVujh0GjH4e7yJro"
-            },
+            },// wenn Erfolg anzeigen in einer Liste 
             success: function (response) {
                 response.forEach(function(item) {
                    $(".listContainer").append('<div class="archive-item"><p>'+ item.date+' <a href="#">'+ item.title +'</a> </p> </div>')
@@ -71,7 +75,7 @@ $(document).ready(function () {
                 console.log("Error message", xhr);
             }
         });
-    });
+    });// Aufrufen der Today Query 
     $(document).on("click", "#buttontoday", function () {
         const dateToday = Date.now();
         $.ajax({
@@ -80,7 +84,7 @@ $(document).ready(function () {
             data:{
                 date: "",
                 api_key: "WeJQydmgkMuduN5VfyYepdvelVujh0GjH4e7yJro"
-            },
+            },// bei Erfolg anzeigen in einem ListContainer 
             success: function (item) {
                    $(".listContainer").append('<div class="archive-item"><p><p>'+ item.date+' <a href="#">'+ item.title +'</a><p>'+item.explanation+'</p> </p> </div>')
                        
@@ -116,6 +120,7 @@ $(document).ready(function () {
             }
         });
     });
+    // wenn auf  de button clear all gegangen wird wird die Liste geleert 
     $(document).on("click", "#reset", function () {
         console.log("here");
         $(".listContainer").empty();
